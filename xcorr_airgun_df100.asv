@@ -23,7 +23,7 @@ templateFile = 'D:\Code\Airgun Detector\air_template_df100.mat';
 plotOn = 0; % turn to 0 to suppress plots; 1 for plots
 DetDir = outputDir;
 
-SearchFileMask = {'*df100.x.wav'};
+SearchFileMask = {'*.x.wav'};
 SearchPathMask = {BaseDir};
 SearchRecursiv = 1; % Setting to 1 searches through all subfolders in the selected folder, setting to 0 only searches the selected folder.
 
@@ -446,7 +446,7 @@ for fidx = 1:size(FileList,1) % Make sure to change the start of the file list s
         newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
         save(newFile,'allSmpPts','allExp','allCorrVal','allDur',...
             'allRmsNBefore','allRmsNAfter','allRmsDet','allPpNBefore',...
-            'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt','-v7.3');
+            'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt');
     else
         bt = [];
         fend = strfind(file,'.df100');
@@ -456,7 +456,7 @@ for fidx = 1:size(FileList,1) % Make sure to change the start of the file list s
         newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
         save(newFile,'allSmpPts','allExp','allCorrVal','allDur',...
             'allRmsNBefore','allRmsNAfter','allRmsDet','allPpNBefore',...
-            'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt','-v7.3');
+            'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt');
     end
     
 end
