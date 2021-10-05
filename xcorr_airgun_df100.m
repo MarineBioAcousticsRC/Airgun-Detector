@@ -14,11 +14,11 @@ parm.ppAS = .5; %pp noise after signal <ppAS (dB) difference will be eliminated
 parm.ppBS = .5; %pp noise before signal
 parm.durLong_s = 10; %duration >= durAfter_s (s) will be eliminated
 parm.durShort_s = .5; %duration >= dur_s (s) will be eliminated
-
+overWritePrevious = 0;
 deplList = dir('X:\G*');
 outDisk  = 'S:\';
 for iDepl = 2:length(deplList)
-    
+
     BaseDir = fullfile(deplList(iDepl).folder,deplList(iDepl).name);%'V:\GOM_DC_11';
     outputDir = fullfile(outDisk,[deplList(iDepl).name,'_AirgunDetections']);%'D:\GOM_DC_11_AirgunDetections';
     mkdir(outputDir)
@@ -41,10 +41,19 @@ for iDepl = 2:length(deplList)
     for fidx = 1:size(FileList,1) % Make sure to change the start of the file list so that it begins with the first file
         % and not the file indicated!
         %     cd(BaseDir)
-        file = FileList{fidx};
+        file = FileList{fidx};    
+        fend = strfind(file,'.df100');
+        if isempty(fend)
+             fend = strfind(file,'.x.wav');
+        end
+        newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
+        if ~overWritePrevious && exist(newFile,'file')
+            disp('Output file already exists, overwrite false, skipping.')
+            continue
+        end
         path = PathList{fidx};
         filepath = fullfile(path,file);
-        
+
         display(['calculating ',file,'; file ',num2str(fidx),'/',num2str(size(FileList),1)])
         rawStart=[];
         rawDur=[];
@@ -460,21 +469,19 @@ for iDepl = 2:length(deplList)
             bt(:,4) = allExp(:,1);
             bt(:,5) = allExp(:,2);
             
-            fend = strfind(file,'.df100');
+            %fend = strfind(file,'.df100');
             if isempty(fend)
                 fend = strfind(file,'.x.wav');
             end
-            newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
+            %newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
             save(newFile,'allSmpPts','allExp','allCorrVal','allDur',...
                 'allRmsNBefore','allRmsNAfter','allRmsDet','allPpNBefore',...
                 'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt','-v7.3');
         else
             bt = [];
-            fend = strfind(file,'.df100');
-            if isempty(fend)
-                fend = strfind(file,'.x.wav');
-            end
-            newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
+            %fend = strfind(file,'.df100');
+            
+            %newFile = fullfile(DetDir,[file(1:fend-1),'.mat']);
             save(newFile,'allSmpPts','allExp','allCorrVal','allDur',...
                 'allRmsNBefore','allRmsNAfter','allRmsDet','allPpNBefore',...
                 'allPpNAfter','allPpDet','rawStart','rawDur','parm','bt','-v7.3');
