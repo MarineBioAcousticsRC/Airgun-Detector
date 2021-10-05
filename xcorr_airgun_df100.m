@@ -22,7 +22,7 @@ for iDepl = 2:length(deplList)
     BaseDir = fullfile(deplList(iDepl).folder,deplList(iDepl).name);%'V:\GOM_DC_11';
     outputDir = fullfile(outDisk,[deplList(iDepl).name,'_AirgunDetections']);%'D:\GOM_DC_11_AirgunDetections';
     mkdir(outputDir)
-    templateFile = 'E:\Code\Airgun-Detector\air_template_df100.mat';
+    templateFile = strrep(mfilename('fullpath'),'xcorr_airgun_df100','air_template_df100.mat');
     plotOn = 0; % turn to 0 to suppress plots; 1 for plots
     DetDir = outputDir;
     
