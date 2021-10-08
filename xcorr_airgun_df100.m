@@ -12,7 +12,7 @@ parm.rmsAS = .5; %rms noise after signal <rmsAS (dB) difference will be eliminat
 parm.rmsBS = .5; %rms noise before signal
 parm.ppAS = .5; %pp noise after signal <ppAS (dB) difference will be eliminated
 parm.ppBS = .5; %pp noise before signal
-parm.durLong_s = 10; %duration >= durAfter_s (s) will be eliminated
+parm.durLong_s = 15; %duration >= durAfter_s (s) will be eliminated
 parm.durShort_s = .5; %duration >= dur_s (s) will be eliminated
 overWritePrevious = 0;
 deplList = dir('Y:\G*');
@@ -26,7 +26,6 @@ for iDepl = 1:length(deplList)
     BaseDir = fullfile(deplList(iDepl).folder,deplList(iDepl).name);%'V:\GOM_DC_11';
     outputDir = fullfile(outDisk,[deplList(iDepl).name,'_AirgunDetections']);%'D:\GOM_DC_11_AirgunDetections';
     mkdir(outputDir)
-
     DetDir = outputDir;
     
     SearchPathMask = {BaseDir};
@@ -98,13 +97,13 @@ for iDepl = 1:length(deplList)
             display(['start of segment ',num2str(idx),'/',num2str(inc)])
             segStart = datenum(rawStart(idx,:));
             
-            start = PARAMS.xhd.byte_loc(idx);%round(rawDur(idx)*fs);
+            start = PARAMS.xhd.byte_loc(idx)/2;%round(rawDur(idx)*fs);
             if idx ==inc
-                stop = PARAMS.xhd.dSubchunkSize;
+                stop = PARAMS.xhd.dSubchunkSize/2;
             else
-                stop = PARAMS.xhd.byte_loc(idx+1)-1;
+                stop = round((PARAMS.xhd.byte_loc(idx+1)-1)/2);
             end            
-            step = stop - start;
+            step = (stop - start);
 
             if start>=fileSampleNum ||stop>fileSampleNum
                 warning('File has fewer than expected samples. Continuing to next xwav.');
@@ -404,29 +403,27 @@ for iDepl = 1:length(deplList)
                         end
                         
                         %
-                        %                                         figure(2)
-                        %                                         subplot(3,1,1)
-                        %                                         plot(yDet), hold on
-                        %                                         plot(startIdx,0,'r*')
-                        %                                         plot(endIdx,0,'r*'), hold off
-                        %                                         title(['segment ',num2str(idx),', detection ',...
-                        %                                             num2str(eidx),'/', num2str(size(expConv,1)),', ',...
-                        %                                             datestr(dTimes(1))])
+                        % figure(2)
+                        % subplot(3,1,1)
+                        % plot(yDet), hold on
+                        % plot(startIdx,0,'r*')
+                        % plot(endIdx,0,'r*'), hold off
+                        % title(['segment ',num2str(idx),', detection ',...
+                        %        num2str(eidx),'/', num2str(size(expConv,1)),', ',...
+                        %        datestr(dTimes(1))])
                         
-                        %                     subplot(3,1,2)
-                        %                     plot(env),hold on
-                        %                     plot(startIdx,env(startIdx),'r*')
-                        %                     plot(endIdx,env(endIdx),'r*'), hold off
+                        % subplot(3,1,2)
+                        % plot(env),hold on
+                        % plot(startIdx,env(startIdx),'r*')
+                        % plot(endIdx,env(endIdx),'r*'), hold off
                         %
-                        %                     subplot(3,1,3)
-                        %                     plot(avg_env_dB), hold on
-                        %                     plot(maedb,'r')
-                        %                     plot(thraedb,'r')
-                        %                     plot(above_env,thr_avg_env_dB,'r*')
-                        %                     plot(below_env,thr_avg_env_dB,'r*'), hold off
-                        %
-                        %
-                        %                     1;
+                        % subplot(3,1,3)
+                        % plot(avg_env_dB), hold on
+                        % plot(maedb,'r')
+                        % plot(thraedb,'r')
+                        % plot(above_env,thr_avg_env_dB,'r*')
+                        % plot(below_env,thr_avg_env_dB,'r*'), hold off
+
                     end
                     
                     allSmpPts = [allSmpPts; smpPts];
