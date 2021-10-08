@@ -2,10 +2,10 @@ function  xcorr_airgun_df100
 
 %pull in all xwavs of a folder and subfolder to run matched filter detector
 %for explosions
-
+global PARAMS
 %parm stores parameters, to be used in TethysXML output
 parm.threshold = 0.003; %threshold for correlation coefficient
-parm.c2_offset = 0.1; %threshold offset above median square of correlation coefficient
+parm.c2_offset = 0.3; %threshold offset above median square of correlation coefficient
 parm.diff_s = .5; %minimum time distance between consecutive explosions (was .05)
 parm.nSamples = 2000; %number of noise samples to be pulled out
 parm.rmsAS = .5; %rms noise after signal <rmsAS (dB) difference will be eliminated
@@ -15,18 +15,19 @@ parm.ppBS = .5; %pp noise before signal
 parm.durLong_s = 10; %duration >= durAfter_s (s) will be eliminated
 parm.durShort_s = .5; %duration >= dur_s (s) will be eliminated
 overWritePrevious = 0;
-deplList = dir('X:\G*');
+deplList = dir('Y:\G*');
 outDisk  = 'S:\';
-for iDepl = 2:length(deplList)
+plotOn = 0; % turn to 0 to suppress plots; 1 for plots
+templateFile = 'E:\Code\Airgun-Detector\air_template_df100.mat';
+SearchFileMask = {'*df100.x.wav';'*d100.x.wav'};
+
+for iDepl = 1:length(deplList)
 
     BaseDir = fullfile(deplList(iDepl).folder,deplList(iDepl).name);%'V:\GOM_DC_11';
     outputDir = fullfile(outDisk,[deplList(iDepl).name,'_AirgunDetections']);%'D:\GOM_DC_11_AirgunDetections';
     mkdir(outputDir)
-    templateFile = 'E:\Code\Airgun-Detector\air_template_df100.mat';
-    plotOn = 0; % turn to 0 to suppress plots; 1 for plots
     DetDir = outputDir;
     
-    SearchFileMask = {'*df100.x.wav'};
     SearchPathMask = {BaseDir};
     SearchRecursiv = 1; % Setting to 1 searches through all subfolders in the selected folder, setting to 0 only searches the selected folder.
     
@@ -64,9 +65,9 @@ for iDepl = 2:length(deplList)
         %     siz = wavread(filepath,'size');   suggested by Bruce
         %Implemented change "that allows for any sampling rate instead of
         %a fixed 10kHz sampling rate that it was originally written for"
-        step = rawDur(1)*fs;
+        % step = rawDur(1)*fs;
         inc = size(rawStart,1);
-        t = 0:rawDur(1)/(step-1):rawDur(1);
+        % t = 0:rawDur(1)/(step-1):rawDur(1);
         
         % lowpass filter y
         % Fc1 = 1;   % First Cutoff Frequency
@@ -95,19 +96,26 @@ for iDepl = 2:length(deplList)
         for idx = 1:inc
             display(['start of segment ',num2str(idx),'/',num2str(inc)])
             segStart = datenum(rawStart(idx,:));
-            start = (idx-1)*step + 1;
-            stop = idx*step;
             
+            start = PARAMS.xhd.byte_loc(idx);%round(rawDur(idx)*fs);
+            if idx ==inc
+                stop = PARAMS.xhd.dSubchunkSize;
+            else
+                stop = PARAMS.xhd.byte_loc(idx+1)-1;
+            end            
+            step = stop - start;
+
             if start>=fileSampleNum ||stop>fileSampleNum
                 warning('File has fewer than expected samples. Continuing to next xwav.');
                 continue
             end % Added from explosion code when the sample size is too small (Macey - 2/13/2018).
             
+            
             y = double(audioread(filepath,[start stop],'native'));
             y = y-mean(y);
             %filter between 200 and 2000 Hz
             yFilt = filtfilt(B,A,y); %filter click
-            fprintf('max = %0.3f\n',max(yFilt))
+            % fprintf('max = %0.3f\n',max(yFilt))
             % if max(yFilt)>= 0.005
             pre_env_y=hilbert(yFilt.');
             env_y=sqrt((real(pre_env_y)).^2+(imag(pre_env_y)).^2); %Au 1993, S.178, equation 9-4
