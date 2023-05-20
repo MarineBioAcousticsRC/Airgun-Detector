@@ -32,7 +32,7 @@ load(template)
 pre_env_temp=hilbert(template.');
 env_temp=sqrt((real(pre_env_temp)).^2+(imag(pre_env_temp)).^2); %Au 1993, S.178, equation 9-4
 
-for fidx = 72:size(FileList,1)
+for fidx = 1:size(FileList,1)
     %     cd(BaseDir)
     file = FileList{fidx};
     path = PathList{fidx};

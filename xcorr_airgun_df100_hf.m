@@ -1,25 +1,25 @@
-function  xcorr_airgun_df100
+function  xcorr_airgun_df100_hf
 
 %pull in all xwavs of a folder and subfolder to run matched filter detector
 %for explosions
 global PARAMS
 %parm stores parameters, to be used in TethysXML output
-parm.threshold = 0.003; %threshold for correlation coefficient
-parm.c2_offset = 0.3; %threshold offset above median square of correlation coefficient
+parm.threshold = 1; %threshold for correlation coefficient
+parm.c2_offset = 4; %threshold offset above median square of correlation coefficient
 parm.diff_s = .5; %minimum time distance between consecutive explosions (was .05)
 parm.nSamples = 2000; %number of noise samples to be pulled out
 parm.rmsAS = .5; %rms noise after signal <rmsAS (dB) difference will be eliminated
 parm.rmsBS = .5; %rms noise before signal
 parm.ppAS = .5; %pp noise after signal <ppAS (dB) difference will be eliminated
-parm.ppBS = .5; %pp noise before signal
-parm.durLong_s = 15; %duration >= durAfter_s (s) will be eliminated
-parm.durShort_s = .5; %duration >= dur_s (s) will be eliminated
+parm.ppBS = -6; %pp noise before signal
+parm.durLong_s = 20; %duration >= durAfter_s (s) will be eliminated
+parm.durShort_s = .2; %duration >= dur_s (s) will be eliminated
 overWritePrevious = 0;
-deplList = dir('\\frosty.ucsd.edu\GofMX_Decimated_8\GOM_*');
-outDisk  = 'N:\tempAirguns';
-plotOn = 0; % turn to 0 to suppress plots; 1 for plots
-templateFile = strrep(mfilename('fullpath'),'xcorr_airgun_df100','air_template_df100.mat');
-SearchFileMask = {'*df100.x.wav';'*d100.x.wav'};
+deplList = dir('\\snowman.ucsd.edu\GofMX_Decimated_3\GofMX_MP08\GofMX_MP08_disks01-06_df100\*');
+outDisk  = 'K:\';
+plotOn = 1; % turn to 0 to suppress plots; 1 for plots
+templateFile = strrep(mfilename('fullpath'),'xcorr_airgun_df100_hf','GOM_GC09_d07_151203_121040_df100_singleshallowseismic.mat');
+SearchFileMask = {'GofMX_MP08_d01_141002_063259*df100.x.wav';'GofMX_MP08_d01_141002_063259*d100.x.wav'};
 
 for iDepl = 1:length(deplList)
 
@@ -71,7 +71,7 @@ for iDepl = 1:length(deplList)
         
         % lowpass filter y
         % Fc1 = 1;   % First Cutoff Frequency
-        Fc2 = 150;  % Second Cutoff Frequency
+        Fc2 = 900;  % Second Cutoff Frequency
         
         N = 10;     % Order
         [B,A] = butter(N/2, Fc2/(fs/2),'low');
@@ -135,7 +135,7 @@ for iDepl = 1:length(deplList)
             if plotOn
                 
                 figure(1);clf
-                subplot(2,1,1)
+                ax = subplot(2,1,1);
                 plot(c2);hold on
                 plot(thr2,'r');hold off
                 subplot(2,1,2)
@@ -240,8 +240,8 @@ for iDepl = 1:length(deplList)
                             e = length(yFilt);
                         end
                         yDet = yFilt(s:e);
-                        if plotOn
-                            hold on; plot(s,env_y(s),'ro');plot(e,env_y(e),'ko');hold off
+                        if  plotOn
+                            subplot(ax);hold on; plot(s,threshold_c2,'ro');plot(e,threshold_c2,'ko');hold off
                         end                       
                         %get noise after signal
                         eAfter = e + parm.nSamples;
@@ -380,8 +380,8 @@ for iDepl = 1:length(deplList)
                         ppNAfterSeg(delUnion) = [];
                         ppDetSeg(delUnion) = [];
                         if plotOn && ~isempty(expTimes)
-                            hold on; plot(expTimes(1),env_y(expTimes(1)),'rx');...
-                                plot(expTimes(2),env_y(expTimes(2)),'kx');hold off
+                            subplot(ax);hold on; plot(expTimes(1),threshold_c2,'rx');...
+                                plot(expTimes(2),threshold_c2,'kx');hold off
                         end
                         if ~isempty(expTimes)
                             %convert samples of segment into samples of file
