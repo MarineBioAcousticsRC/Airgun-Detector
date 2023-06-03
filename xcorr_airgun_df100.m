@@ -5,16 +5,18 @@ function  xcorr_airgun_df100
 global PARAMS
 %parm stores parameters, to be used in TethysXML output
 parm.threshold = 0.003; %threshold for correlation coefficient
-parm.c2_offset = 0.3; %threshold offset above median square of correlation coefficient
-parm.diff_s = .5; %minimum time distance between consecutive explosions (was .05)
-parm.nSamples = 2000; %number of noise samples to be pulled out
-parm.rmsAS = .5; %rms noise after signal <rmsAS (dB) difference will be eliminated
-parm.rmsBS = .5; %rms noise before signal
-parm.ppAS = .5; %pp noise after signal <ppAS (dB) difference will be eliminated
-parm.ppBS = .5; %pp noise before signal
-parm.durLong_s = 15; %duration >= durAfter_s (s) will be eliminated
-parm.durShort_s = .5; %duration >= dur_s (s) will be eliminated
-overWritePrevious = 0;
+parm.c2_offset = 0.15; %threshold offset above median square of correlation coefficient
+parm.diff_s = 1; %minimum time distance between consecutive explosions (was .05)
+parm.nSamples = 1000; %number of noise samples to be pulled out
+parm.nBuff = 2000; %number of samples to buffer between end of detection and noise sample.
+parm.rmsAS = 1; %rms noise after signal <rmsAS (dB) difference will be eliminated
+parm.rmsBS = 1; %rms noise before signal
+parm.ppAS = 1; %pp noise after signal <ppAS (dB) difference will be eliminated
+parm.ppBS = 1; %pp noise before signal
+parm.durLong_s = 5; %duration >= durAfter_s (s) will be eliminated
+parm.durShort_s = .6; %duration <= dur_s (s) will be eliminated
+minCorrThresh = 7e15;
+overWritePrevious = 1;
 deplList = dir('\\frosty.ucsd.edu\GofMX_Decimated_8\GOM_*');
 outDisk  = 'N:\tempAirguns';
 plotOn = 0; % turn to 0 to suppress plots; 1 for plots
@@ -38,7 +40,8 @@ for iDepl = 1:length(deplList)
     template = templateStruct.DATA;
     pre_env_temp=hilbert(template');
     env_temp=sqrt((real(pre_env_temp)).^2+(imag(pre_env_temp)).^2); %Au 1993, S.178, equation 9-4
-    
+    len_template = length(template);
+    thrhold = [];
     for fidx = 1:size(FileList,1) % Make sure to change the start of the file list so that it begins with the first file
         % and not the file indicated!
         %     cd(BaseDir)
@@ -128,15 +131,16 @@ for iDepl = 1:length(deplList)
             c2 = c.*c;
             
             %calculate floating threshold
-            medianC2 = median(c2);
-            threshold_c2 = medianC2 + (medianC2*parm.c2_offset);
+            medianC2 = median(c2(1:(end-len_template)));
+            threshold_c2 = max(medianC2 + (medianC2*parm.c2_offset),minCorrThresh);
             %         thr = ones(length(y),1)*threshold;
             thr2 = ones(length(y),1)*threshold_c2;
+            thrhold = [thrhold;threshold_c2];
             if plotOn
                 
                 figure(1);clf
                 subplot(2,1,1)
-                plot(c2);hold on
+                plot(c2(1:(end-len_template)));hold on
                 plot(thr2,'r');hold off
                 subplot(2,1,2)
                 plot(env_y), hold on
@@ -224,7 +228,7 @@ for iDepl = 1:length(deplList)
                             s = 1;
                         else
                             s = expConv(eidx,1)+round(length(template)*0.5);
-                        end;
+                        end
                         e = min(expConv(eidx,2)+round(length(template)*0.5),length(yFilt));%-length(template)/2;  %AJD changed 1.2 to 1.5 7/13/2016
 
                         %check if s is before segment starts
@@ -250,15 +254,15 @@ for iDepl = 1:length(deplList)
                             eAfter = length(yFilt);
                         end
                         
-                        yNAfter = yFilt((e+1):eAfter);
+                        yNAfter = yFilt((e+parm.nBuff):min((parm.nBuff+eAfter),length(yFilt)));
                         
                         %get noise before signal
-                        sBefore = s - (parm.nSamples);
+                        sBefore = s - (parm.nSamples)-parm.nBuff;
                         if sBefore<1
                             sBefore = 1;
                         end
                         
-                        yNBefore = yFilt(sBefore:(s-1));
+                        yNBefore = yFilt(sBefore:(s-1-parm.nBuff));
                         
                         if isempty(yNBefore)
                             yNBefore = eps;
@@ -364,10 +368,11 @@ for iDepl = 1:length(deplList)
                         delPpBS = find(dppBS<parm.ppBS); %230,409
                         delDur = find(durSeg>=parm.durLong_s | durSeg<=parm.durShort_s); %230,729
                         
-                        delThing = {delRmsAS;delPpAS;delRmsBS;delPpBS;delDur};
-                        delUnion = unique([delRmsAS;delPpAS;delRmsBS;delPpBS;delDur]); %276,145
-                        if ~isempty(delUnion)
-                            1;
+                        delThing = sum([delRmsAS;delPpAS;delRmsBS;delPpBS;delDur]); %276,145
+                        if delThing>1
+                           delUnion = 1;
+                        else
+                            delUnion = [];
                         end
                         %delete false detections
                         expTimes(delUnion,:) = [];
