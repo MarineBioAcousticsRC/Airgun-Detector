@@ -106,7 +106,6 @@ for iDepl = 1:length(deplList)
             else
                 stop = round((PARAMS.xhd.byte_loc(idx+1)-PARAMS.xhd.byte_loc(1)-1)/2);
             end            
-            step = (stop - start);
 
             if start>=fileSampleNum ||stop>fileSampleNum
                 warning('File has fewer than expected samples. Continuing to next xwav.');
@@ -125,8 +124,8 @@ for iDepl = 1:length(deplList)
             
             %calculate cross correlation with template explosion
             %         [c, filterstate] = filter(env_temp,1,env_y,filterstate);
-            c = xcorr(env_y,env_temp);
-            c(1:step-1) = [];
+            [c,lags] = xcorr(env_y,env_temp);
+            c = c(lags>=0); % keep zero and positive lags, so c(k) lines up with sample k of the segment
             
             c2 = c.*c;
             
