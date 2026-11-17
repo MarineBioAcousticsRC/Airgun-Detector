@@ -56,8 +56,8 @@ expTimes =expTimes(k1,:);
 
 detGaps = diff(expTimes(:,1));
 boutGaps = find(detGaps>groupPeriod);
-boutStart = [expTimes(1);expTimes(boutGaps+1)];   % Start time of bout.
-boutEnd = [expTimes(boutGaps);expTimes(end)];   % End time of bout.
+boutStart = [expTimes(1,1);expTimes(boutGaps+1,1)];   % Start time of bout (start of its first detection).
+boutEnd = [expTimes(boutGaps,2);expTimes(end,2)];   % End time of bout (end of its last detection).
 
 fprintf('Found %.0f bouts\n',length(boutStart))
 
