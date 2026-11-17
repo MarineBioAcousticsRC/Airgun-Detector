@@ -150,7 +150,7 @@ PARAMS.xhd.dSubchunkSize = fread(fid,1,'uint32');        % (Size of Subchunk - 8
 
 fclose(fid);
 rawStart = [PARAMS.xhd.year' PARAMS.xhd.month' PARAMS.xhd.day' PARAMS.xhd.hour'...
-    PARAMS.xhd.minute' PARAMS.xhd.secs'];
+    PARAMS.xhd.minute' PARAMS.xhd.secs'+(PARAMS.xhd.ticks'/1000)]; % include milliseconds
 if rawStart(1,1) < 2000
     rawStart(:,1) = rawStart(:,1)+2000;
 end
