@@ -2,3 +2,12 @@
 *.fig
 *.png
 *.asv
+
+# figures shown in the README are kept; other plots are not
+!evaluation/figures/*.png
+# things that are rebuilt or local
+cnn/cache/
+__pycache__/
+*.log
+evaluation/_guitest/
+cnn/file_index.csv
