@@ -1,0 +1,98 @@
+window,condition_guess,site,file,start_segment,start_time,proposed_shots
+V001,network copies disagree,CE_03,GOM_CE_03_221107_005345_df100.x.wav,5089,2022-11-11 10:53:44,15
+V002,scan saw regular pulsing; network finds little,CE_03,GOM_CE_03_221214_025345_df100.x.wav,385,2022-12-14 10:53:44,5
+V003,network unsure,CE_03,GOM_CE_03_230121_022615_df100.x.wav,3457,2023-01-24 02:26:15,32
+V004,network sees pulses but is not confident,CE_03,GOM_CE_03_230121_022615_df100.x.wav,4801,2023-01-25 06:26:14,16
+V005,network sees pulses but is not confident,CE_03,GOM_CE_03_230430_054615_df100.x.wav,2401,2023-05-02 07:46:15,30
+V006,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_220921_120000_df100.x.wav,4609,2022-09-25 12:00:00,37
+V007,network sees pulses but is not confident,DC_15,GOM_DC_15_220930_183000_df100.x.wav,1345,2022-10-01 22:30:00,35
+V008,network sees pulses but is not confident,DC_15,GOM_DC_15_220930_183000_df100.x.wav,1921,2022-10-02 10:30:00,33
+V009,network sees pulses but is not confident,DC_15,GOM_DC_15_221005_094500_df100.x.wav,769,2022-10-06 01:44:59,34
+V010,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_221005_094500_df100.x.wav,1153,2022-10-06 09:45:00,11
+V011,network sees pulses but is not confident,DC_15,GOM_DC_15_221005_094500_df100.x.wav,3649,2022-10-08 13:44:59,22
+V012,network sees pulses but is not confident,DC_15,GOM_DC_15_221010_010000_df100.x.wav,1729,2022-10-11 12:59:59,17
+V013,network copies disagree,DC_15,GOM_DC_15_221014_161500_df100.x.wav,3649,2022-10-17 20:15:00,11
+V014,network copies disagree,DC_15,GOM_DC_15_221014_161500_df100.x.wav,4225,2022-10-18 08:15:00,12
+V015,network sees pulses but is not confident,DC_15,GOM_DC_15_221025_010615_df100.x.wav,193,2022-10-25 05:06:15,16
+V016,network sees pulses but is not confident,DC_15,GOM_DC_15_221029_162115_df100.x.wav,2689,2022-11-01 00:21:15,24
+V017,network copies disagree,DC_15,GOM_DC_15_221029_162115_df100.x.wav,3073,2022-11-01 08:21:14,11
+V018,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_221103_073615_df100.x.wav,385,2022-11-03 15:36:15,11
+V019,network copies disagree,DC_15,GOM_DC_15_221103_073615_df100.x.wav,961,2022-11-04 03:36:15,13
+V020,network sees pulses but is not confident,DC_15,GOM_DC_15_221112_140615_df100.x.wav,961,2022-11-13 10:06:15,18
+V021,network sees pulses but is not confident,DC_15,GOM_DC_15_221206_204615_df100.x.wav,4417,2022-12-10 16:46:15,32
+V022,network copies disagree,DC_15,GOM_DC_15_221216_031615_df100.x.wav,385,2022-12-16 11:16:14,1
+V023,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_221217_053845_df100.x.wav,1,2022-12-17 05:38:44,0
+V024,network sees pulses but is not confident,DC_15,GOM_DC_15_221217_053845_df100.x.wav,385,2022-12-17 13:38:44,18
+V025,network copies disagree,DC_15,GOM_DC_15_221217_053845_df100.x.wav,3457,2022-12-20 05:38:44,0
+V026,network copies disagree,DC_15,GOM_DC_15_221221_205345_df100.x.wav,1345,2022-12-23 00:53:44,0
+V027,network sees pulses but is not confident,DC_15,GOM_DC_15_230114_010845_df100.x.wav,193,2023-01-14 05:08:45,8
+V028,network sees pulses but is not confident,DC_15,GOM_DC_15_230114_010845_df100.x.wav,1153,2023-01-15 01:08:44,8
+V029,network unsure,DC_15,GOM_DC_15_230119_184730_df100.x.wav,1729,2023-01-21 06:47:30,36
+V030,network unsure,DC_15,GOM_DC_15_230119_184730_df100.x.wav,2497,2023-01-21 22:47:29,37
+V031,network unsure,DC_15,GOM_DC_15_230124_100230_df100.x.wav,3649,2023-01-27 14:02:30,29
+V032,network sees pulses but is not confident,DC_15,GOM_DC_15_230207_074730_df100.x.wav,2113,2023-02-09 03:47:30,16
+V033,network unsure,DC_15,GOM_DC_15_230308_053845_df100.x.wav,4609,2023-03-12 05:38:44,38
+V034,network unsure,DC_15,GOM_DC_15_230318_143230_df100.x.wav,1921,2023-03-20 06:32:30,31
+V035,network unsure,DC_15,GOM_DC_15_230318_143230_df100.x.wav,2113,2023-03-20 10:32:30,31
+V036,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230318_143230_df100.x.wav,2881,2023-03-21 02:32:29,25
+V037,network unsure,DC_15,GOM_DC_15_230327_210230_df100.x.wav,385,2023-03-28 05:02:30,37
+V038,network unsure,DC_15,GOM_DC_15_230327_210230_df100.x.wav,1153,2023-03-28 21:02:30,39
+V039,network unsure,DC_15,GOM_DC_15_230327_210230_df100.x.wav,1729,2023-03-29 09:02:30,30
+V040,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230406_033230_df100.x.wav,961,2023-04-06 23:32:29,19
+V041,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230510_191615_df100.x.wav,385,2023-05-11 03:16:15,0
+V042,network copies disagree,DC_15,GOM_DC_15_230510_191615_df100.x.wav,1921,2023-05-12 11:16:14,0
+V043,network sees pulses but is not confident,DC_15,GOM_DC_15_230510_191615_df100.x.wav,2497,2023-05-12 23:16:14,41
+V044,network sees pulses but is not confident,DC_15,GOM_DC_15_230510_191615_df100.x.wav,3265,2023-05-13 15:16:15,25
+V045,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230515_103115_df100.x.wav,1,2023-05-15 10:31:14,0
+V046,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230520_014615_df100.x.wav,1,2023-05-20 01:46:15,0
+V047,scan saw regular pulsing; network finds little,DC_15,GOM_DC_15_230520_014615_df100.x.wav,3073,2023-05-22 17:46:14,1
+V048,network copies disagree,DC_15,GOM_DC_15_230529_081615_df100.x.wav,3841,2023-06-01 16:16:14,0
+V049,network sees pulses but is not confident,DC_15,GOM_DC_15_230613_082730_df100.x.wav,1153,2023-06-14 08:27:29,27
+V050,network unsure,DC_15,GOM_DC_15_230613_082730_df100.x.wav,4417,2023-06-17 04:27:29,38
+V051,network sees pulses but is not confident,DC_15,GOM_DC_15_230613_082730_df100.x.wav,4609,2023-06-17 08:27:29,30
+V052,network sees pulses but is not confident,DC_15,GOM_DC_15_230617_234230_df100.x.wav,193,2023-06-18 03:42:29,10
+V053,network sees pulses but is not confident,DC_15,GOM_DC_15_230617_234230_df100.x.wav,2689,2023-06-20 07:42:29,41
+V054,network copies disagree,DC_15,GOM_DC_15_230622_145730_df100.x.wav,1537,2023-06-23 22:57:30,3
+V055,network sees pulses but is not confident,DC_15,GOM_DC_15_230627_061230_df100.x.wav,1537,2023-06-28 14:12:29,37
+V056,network copies disagree,DT_15,GOM_DT_15_220814_114229_df100.x.wav,3457,2022-08-17 11:42:28,20
+V057,network sees pulses but is not confident,DT_15,GOM_DT_15_221205_122729_df100.x.wav,3457,2022-12-08 12:27:28,15
+V058,scan saw regular pulsing; network finds little,DT_15,GOM_DT_15_230103_050844_df100.x.wav,4225,2023-01-06 21:08:44,23
+V059,network sees pulses but is not confident,DT_15,GOM_DT_15_230107_202344_df100.x.wav,4417,2023-01-11 16:23:43,21
+V060,network sees pulses but is not confident,DT_15,GOM_DT_15_230126_092344_df100.x.wav,3457,2023-01-29 09:23:44,19
+V061,network copies disagree,EB_01,GOM_EB_01_230428_213300_df100.x.wav,1,2023-04-28 21:33:00,0
+V062,network copies disagree,GC_15,GOM_GC_15_220708_012059_df100.x.wav,2689,2022-07-11 00:57:29,1
+V063,network copies disagree,GC_15,GOM_GC_15_220722_144229_df100.x.wav,1729,2022-07-24 02:42:28,0
+V064,network unsure,GC_15,GOM_GC_15_220731_211229_df100.x.wav,2881,2022-08-03 09:12:29,33
+V065,network sees pulses but is not confident,GC_15,GOM_GC_15_220828_164229_df100.x.wav,2113,2022-08-30 12:42:29,11
+V066,network sees pulses but is not confident,GC_15,GOM_GC_15_220903_050959_df100.x.wav,577,2022-09-03 17:09:59,28
+V067,network sees pulses but is not confident,GC_15,GOM_GC_15_220903_050959_df100.x.wav,3457,2022-09-06 05:09:59,22
+V068,network sees pulses but is not confident,GC_15,GOM_GC_15_220907_202459_df100.x.wav,5185,2022-09-12 08:24:59,28
+V069,network unsure,GC_15,GOM_GC_15_221001_003959_df100.x.wav,2689,2022-10-03 08:39:58,25
+V070,network copies disagree,GC_15,GOM_GC_15_221108_001114_df100.x.wav,961,2022-11-08 20:11:13,1
+V071,network copies disagree,MC_17,GOM_MC_17_220815_215730_df100.x.wav,1345,2022-08-17 01:57:30,17
+V072,network copies disagree,MC_17,GOM_MC_17_220918_053730_df100.x.wav,577,2022-09-18 17:37:30,2
+V073,network copies disagree,MC_17,GOM_MC_17_221011_095230_df100.x.wav,2497,2022-10-13 13:52:30,2
+V074,scan saw regular pulsing; network finds little,MC_17,GOM_MC_17_221020_162230_df100.x.wav,2113,2022-10-22 12:22:30,7
+V075,network sees pulses but is not confident,MC_17,GOM_MC_17_221127_142115_df100.x.wav,3841,2022-11-30 22:21:15,23
+V076,scan saw regular pulsing; network finds little,MC_17,GOM_MC_17_221226_043730_df100.x.wav,4801,2022-12-30 08:37:30,19
+V077,scan saw regular pulsing; network finds little,MC_17,GOM_MC_17_230215_042230_df100.x.wav,385,2023-02-15 12:22:30,3
+V078,network sees pulses but is not confident,MC_17,GOM_MC_17_230311_005615_df100.x.wav,577,2023-03-11 12:56:15,30
+V079,network unsure,MC_17,GOM_MC_17_230315_161115_df100.x.wav,5185,2023-03-20 04:11:14,22
+V080,network unsure,MC_17,GOM_MC_17_230320_072615_df100.x.wav,385,2023-03-20 15:26:14,27
+V081,network unsure,MC_17,GOM_MC_17_230403_051115_df100.x.wav,1537,2023-04-04 13:11:14,20
+V082,network sees pulses but is not confident,MC_17,GOM_MC_17_230417_060615_df100.x.wav,3457,2023-04-20 06:06:14,28
+V083,network sees pulses but is not confident,MC_17,GOM_MC_17_230510_102115_df100.x.wav,577,2023-05-10 22:21:15,30
+V084,scan saw regular pulsing; network finds little,MC_17,GOM_MC_17_230510_102115_df100.x.wav,1153,2023-05-11 10:21:15,22
+V085,network sees pulses but is not confident,MC_17,GOM_MC_17_230510_102115_df100.x.wav,2113,2023-05-12 06:21:15,37
+V086,network sees pulses but is not confident,MC_17,GOM_MC_17_230510_102115_df100.x.wav,5185,2023-05-14 22:21:15,23
+V087,network unsure,MC_17,GOM_MC_17_230515_013615_df100.x.wav,1537,2023-05-16 09:36:15,33
+V088,network sees pulses but is not confident,MC_17,GOM_MC_17_230515_013615_df100.x.wav,2881,2023-05-17 13:36:14,30
+V089,scan saw regular pulsing; network finds little,SL_03,GOM_SL_03_220914_014000_df100.x.wav,3265,2022-09-16 21:39:59,3
+V090,network unsure,SL_03,GOM_SL_03_221223_092615_df100.x.wav,2881,2022-12-25 21:26:14,31
+V091,network unsure,SL_03,GOM_SL_03_230116_125730_df100.x.wav,4225,2023-01-20 04:57:30,26
+V092,scan saw regular pulsing; network finds little,SL_03,GOM_SL_03_230502_092000_df100.x.wav,4033,2023-05-05 21:19:59,5
+V093,network unsure,Y2B_01,GOM_Y2B_01_211109_094730_df100.x.wav,2305,2021-11-11 09:47:30,45
+V094,network sees pulses but is not confident,Y2B_01,GOM_Y2B_01_211114_010230_df100.x.wav,4033,2021-11-17 13:02:29,20
+V095,network sees pulses but is not confident,Y2B_01,GOM_Y2B_01_211216_114730_df100.x.wav,3265,2021-12-19 07:47:29,24
+V096,network copies disagree,Y2B_01,GOM_Y2B_01_220403_204730_df100.x.wav,1921,2022-04-05 12:47:30,8
+V097,network sees pulses but is not confident,Y2B_01,GOM_Y2B_01_220427_222730_df100.x.wav,961,2022-04-28 18:27:30,26

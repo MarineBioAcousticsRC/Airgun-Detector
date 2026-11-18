@@ -1,0 +1,39 @@
+detector,setting,step,current,set,shots,detections,found,spare
+original,floor 1e17 offset 0.15,1,0,set1,313,22,0,22
+original,floor 5e16 offset 0.15,2,0,set1,313,37,15,22
+original,floor 2e16 offset 0.15,3,0,set1,313,91,66,25
+original,floor 7e15 offset 0.15,4,1,set1,313,230,189,41
+original,floor 3e15 offset 0.15,5,0,set1,313,259,211,48
+original,floor 1e15 offset 0.15,6,0,set1,313,287,235,52
+original,floor 3e14 offset 0.15,7,0,set1,313,336,275,61
+original,floor 1e14 offset 0.15,8,0,set1,313,338,275,63
+original,floor 0 offset 0.15,9,0,set1,313,349,275,74
+original,floor 0 offset 0.05,10,0,set1,313,337,265,72
+original,floor 0 offset 0,11,0,set1,313,320,250,70
+prototype,weak 0.8 shape 0.95 loud Inf clear Inf,1,0,set1,313,35,35,0
+prototype,weak 0.7 shape 0.9 loud Inf clear Inf,2,0,set1,313,119,119,0
+prototype,weak 0.6 shape 0.85 loud 4 clear 16,3,0,set1,313,244,241,3
+prototype,weak 0.5 shape 0.75 loud 2 clear 12,4,0,set1,313,268,263,5
+prototype,weak 0.4 shape 0.65 loud 1 clear 8,5,1,set1,313,306,294,12
+prototype,weak 0.3 shape 0.55 loud 0.75 clear 6,6,0,set1,313,345,300,45
+prototype,weak 0.2 shape 0.45 loud 0.5 clear 4,7,0,set1,313,416,303,113
+prototype,weak 0.1 shape 0.35 loud 0.25 clear 2,8,0,set1,313,511,300,211
+original,floor 1e17 offset 0.15,1,0,set2,546,26,26,0
+original,floor 5e16 offset 0.15,2,0,set2,546,50,43,7
+original,floor 2e16 offset 0.15,3,0,set2,546,168,159,9
+original,floor 7e15 offset 0.15,4,1,set2,546,243,230,12
+original,floor 3e15 offset 0.15,5,0,set2,546,305,289,15
+original,floor 1e15 offset 0.15,6,0,set2,546,362,334,27
+original,floor 3e14 offset 0.15,7,0,set2,546,412,348,63
+original,floor 1e14 offset 0.15,8,0,set2,546,436,367,68
+original,floor 0 offset 0.15,9,0,set2,546,442,369,72
+original,floor 0 offset 0.05,10,0,set2,546,455,381,73
+original,floor 0 offset 0,11,0,set2,546,443,375,67
+prototype,weak 0.8 shape 0.95 loud Inf clear Inf,1,0,set2,546,0,0,0
+prototype,weak 0.7 shape 0.9 loud Inf clear Inf,2,0,set2,546,21,21,0
+prototype,weak 0.6 shape 0.85 loud 4 clear 16,3,0,set2,546,200,192,8
+prototype,weak 0.5 shape 0.75 loud 2 clear 12,4,0,set2,546,322,311,11
+prototype,weak 0.4 shape 0.65 loud 1 clear 8,5,1,set2,546,421,397,24
+prototype,weak 0.3 shape 0.55 loud 0.75 clear 6,6,0,set2,546,508,447,59
+prototype,weak 0.2 shape 0.45 loud 0.5 clear 4,7,0,set2,546,650,481,160
+prototype,weak 0.1 shape 0.35 loud 0.25 clear 2,8,0,set2,546,817,490,315

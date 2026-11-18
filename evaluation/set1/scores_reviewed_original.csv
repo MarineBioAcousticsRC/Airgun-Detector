@@ -1,0 +1,23 @@
+window,condition,site,status,shots,detections,found,missed,merged,false,long_dets
+W01,loud regular,CE_03,airguns,30,30,30,0,0,0,0
+W02,paired shots,CE_03,airguns,30,30,30,0,0,0,5
+W03,paired shots,CE_03,airguns,24,24,24,0,0,0,0
+W04,faint,CE_03,airguns,26,0,0,26,0,0,0
+W05,irregular,CE_03,airguns,43,27,27,16,12,0,12
+W06,quiet no airguns,CE_03,no airguns,0,0,0,0,0,0,0
+W07,fast shooting,CE_03,airguns,47,39,39,8,4,0,4
+W08,fast then shots stop,CE_03,airguns,22,21,21,1,0,0,0
+W09,ship noise no airguns,AC_02,no airguns,0,1,0,0,0,1,1
+W10,ship noise no airguns,AC_02,no airguns,0,14,0,0,0,14,3
+W11,loud regular,MC_17,airguns,16,16,16,0,0,0,15
+W12,ship noise no airguns,MC_17,no airguns,0,0,0,0,0,0,0
+W15,quiet no airguns,MC_17,no airguns,0,0,0,0,0,0,0
+W16,ship noise no airguns,DC_15,no airguns,0,0,0,0,0,0,0
+W17,whale calls and tonals no airguns,DC_15,no airguns,0,0,0,0,0,0,0
+W18,low-frequency fast pulses,DC_15,airguns,50,0,0,50,0,0,0
+W19,whale calls no airguns,DC_15,no airguns,0,0,0,0,0,0,0
+W20,whale calls no airguns,DC_15,no airguns,0,0,0,0,0,0,0
+W21,ship noise no airguns,Y2B_01,no airguns,0,4,0,0,0,4,4
+W22,faint low-frequency regular,Y2B_01,airguns,25,2,2,23,0,0,0
+W23,ship noise no airguns,Y2B_01,no airguns,0,10,0,0,0,10,4
+W24,ship noise no airguns,Y2B_01,no airguns,0,12,0,0,0,12,3

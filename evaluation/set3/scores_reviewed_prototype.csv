@@ -1,0 +1,58 @@
+window,condition,site,status,shots,detections,found,missed,merged,false,long_dets
+Y02,random,DC_15,airguns,35,18,18,17,0,0,0
+Y03,random,DC_15,airguns,22,19,19,3,0,0,0
+Y04,random,DC_15,airguns,23,22,22,1,0,0,0
+Y05,random,DC_15,airguns,21,18,18,3,0,0,0
+Y06,random,DC_15,no airguns,0,3,0,0,0,3,0
+Y07,random,DC_15,no airguns,0,1,0,0,0,1,0
+Y08,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y09,random,DC_15,airguns,45,40,40,5,0,0,0
+Y10,random,DC_15,airguns,35,11,11,24,1,0,6
+Y11,random,DC_15,airguns,23,9,9,14,0,0,0
+Y12,random,DC_15,airguns,43,39,39,4,0,0,0
+Y13,random,DC_15,no airguns,0,1,0,0,0,1,1
+Y14,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y15,random,DC_15,airguns,18,13,13,5,0,0,0
+Y16,random,DC_15,no airguns,0,3,0,0,0,3,1
+Y17,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y18,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y19,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y20,random,DC_15,no airguns,0,0,0,0,0,0,0
+Y21,random,GC_15,airguns,30,27,27,3,0,0,0
+Y22,random,GC_15,airguns,9,9,9,0,0,0,0
+Y23,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y24,random,GC_15,airguns,23,21,21,2,0,0,0
+Y25,random,GC_15,airguns,21,21,21,0,0,0,0
+Y26,random,GC_15,airguns,2,2,2,0,0,0,0
+Y27,random,GC_15,airguns,37,36,36,1,0,0,0
+Y28,random,GC_15,airguns,34,33,33,1,0,0,0
+Y29,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y30,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y31,random,GC_15,airguns,11,11,11,0,0,0,2
+Y32,random,GC_15,airguns,33,32,32,1,0,0,1
+Y33,random,GC_15,airguns,37,31,31,6,0,0,0
+Y34,random,GC_15,airguns,32,31,31,1,0,0,1
+Y35,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y36,random,GC_15,airguns,31,26,26,5,0,0,0
+Y37,random,GC_15,airguns,23,23,23,0,0,0,0
+Y38,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y39,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y40,random,GC_15,no airguns,0,0,0,0,0,0,0
+Y41,random,MC_17,airguns,25,25,10,15,0,15,0
+Y42,random,MC_17,airguns,25,24,24,1,0,0,0
+Y43,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y44,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y45,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y46,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y47,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y48,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y49,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y50,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y51,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y52,random,MC_17,airguns,47,46,46,1,0,0,0
+Y53,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y54,random,MC_17,airguns,30,27,27,3,0,0,12
+Y55,random,MC_17,airguns,29,32,27,2,0,5,1
+Y56,random,MC_17,no airguns,0,0,0,0,0,0,0
+Y57,random,MC_17,airguns,43,42,42,1,0,0,0
+Y60,random,MC_17,no airguns,0,0,0,0,0,0,0

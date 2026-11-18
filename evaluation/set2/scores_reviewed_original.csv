@@ -1,0 +1,29 @@
+window,condition,site,status,shots,detections,found,missed,merged,false,long_dets
+X01,scan: regular pulsing,CE_03,airguns,17,16,16,1,1,0,16
+X02,scan: regular pulsing,CE_03,airguns,31,23,23,8,8,0,13
+X03,scan: unclear,CE_03,airguns,52,38,38,14,5,0,0
+X04,scan: no pulsing,CE_03,airguns,40,18,18,22,2,0,6
+X05,scan: regular pulsing,MC_17,airguns,15,16,15,0,0,1,15
+X06,scan: regular pulsing,MC_17,airguns,22,16,16,6,2,0,15
+X07,scan: unclear,MC_17,airguns,49,0,0,49,0,0,0
+X08,scan: no pulsing,MC_17,no airguns,0,0,0,0,0,0,0
+X09,scan: regular pulsing,DC_15,airguns,38,15,15,23,0,0,12
+X10,scan: regular pulsing,DC_15,airguns,12,0,0,12,0,0,0
+X11,scan: unclear,DC_15,airguns,25,0,0,25,0,0,0
+X12,scan: no pulsing,DC_15,no airguns,0,0,0,0,0,0,0
+X13,scan: regular pulsing,Y2B_01,no airguns,0,4,0,0,0,4,1
+X14,scan: regular pulsing,Y2B_01,airguns,26,0,0,26,0,0,0
+X15,scan: unclear,Y2B_01,no airguns,0,7,0,0,0,7,1
+X16,scan: no pulsing,Y2B_01,no airguns,0,0,0,0,0,0,0
+X17,scan: regular pulsing,SL_03,airguns,37,16,16,21,7,0,16
+X18,scan: regular pulsing,SL_03,airguns,32,29,29,3,2,0,15
+X19,scan: unclear,SL_03,airguns,33,16,16,17,4,0,14
+X20,scan: no pulsing,SL_03,no airguns,0,0,0,0,0,0,0
+X21,scan: regular pulsing,DT_15,airguns,17,13,12,5,0,0,12
+X22,scan: regular pulsing,DT_15,airguns,34,16,16,18,1,0,2
+X23,scan: unclear,DT_15,airguns,23,0,0,23,0,0,0
+X24,scan: no pulsing,DT_15,airguns,30,0,0,30,0,0,0
+X25,scan: regular pulsing,EB_01,unknown,0,0,0,0,0,0,0
+X26,scan: regular pulsing,EB_01,no airguns,0,0,0,0,0,0,0
+X27,scan: unclear,EB_01,airguns,13,0,0,13,0,0,0
+X28,scan: no pulsing,EB_01,unknown,0,0,0,0,0,0,0
