@@ -1,6 +1,6 @@
 function  xcorr_airgun_shape
-% PROTOTYPE two-stage airgun detector. Not a replacement for
-% xcorr_airgun_df100 until it has been reviewed.
+% XCORR_AIRGUN_SHAPE  Shape-based two-stage airgun detector.
+% Run it on a deployment with run_xcorr_shape.
 %
 % Stage 1 - find candidate shots by shape.
 %   The low-passed signal envelope is compared with the template envelope

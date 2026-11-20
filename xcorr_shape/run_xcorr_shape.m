@@ -1,9 +1,11 @@
 function run_xcorr_shape(deployment,outDisk,fileMask)
 % RUN_XCORR_SHAPE  Run the shape-based cross-correlation detector on a whole deployment.
 %
-%   run_xcorr_shape('GOM_MC_17','E:\AirgunPrototype')
+%   run_xcorr_shape('GOM_MC_17','E:\AirgunShape')
+%   run_xcorr_shape('\\frosty.ucsd.edu\GofMX_Decimated_12\GOM_GC_18','E:\AirgunShape')
 %
-% deployment: folder name under \\frosty.ucsd.edu\GofMX_Decimated_8, e.g. 'GOM_MC_17'.
+% deployment: folder name under \\frosty.ucsd.edu\GofMX_Decimated_8, e.g. 'GOM_MC_17',
+%             or the full path of a deployment folder on any share.
 %             Every df100 xwav in every disk folder of that deployment is processed.
 % outDisk:    where results go. One folder per deployment is created,
 %             <outDisk>\<deployment>_AirgunDetections, with one .mat per xwav
@@ -18,6 +20,9 @@ function run_xcorr_shape(deployment,outDisk,fileMask)
 
 here = fileparts(mfilename('fullpath')); repo = fileparts(here);
 root = '\\frosty.ucsd.edu\GofMX_Decimated_8';
+if any(deployment == '/' | deployment == '\')  % a full path was given
+    [root,name,ext] = fileparts(deployment); deployment = [name ext];
+end
 addpath(fullfile(repo,'xcorr_original'));   % readxwavhd and the template live with the original detector
 if isempty(which('utFindFiles'))
     addpath(fullfile(fileparts(repo),'Triton','Remoras','Logger'));
